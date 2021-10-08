@@ -4,7 +4,7 @@
 # Import relevant libraries for this test program
 from django.test import TestCase
 
-from app.cal import add
+from app.cal import add, subtract
 
 
 class CalcTest(TestCase):
@@ -13,4 +13,6 @@ class CalcTest(TestCase):
         """Test that two numbers are added together"""
         self.assertEqual(add(3, 8), 11)
 
-
+    def test_subtract_numbers(self):
+        """Test that values are subtracted and returned"""
+        self.assertEqual(subtract(5, 11), 6)
