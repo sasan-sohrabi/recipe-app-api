@@ -3,7 +3,7 @@ import os
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
     PermissionsMixin
-from django.conf import settings
+# from django.conf import settings
 
 
 def recipe_image_file_path(instance, filename):
