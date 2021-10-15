@@ -3,6 +3,18 @@ MAINTAINER London App Developer Ltd
 
 ENV PYTHONUNBUFFERED 1
 
+RUN apt-get update && apt-get install
+
+RUN apt-get install -y \
+  dos2unix \
+  libpq-dev \
+  libmariadb-dev-compat \
+  libmariadb-dev \
+  gcc \
+  && apt-get clean
+
+RUN python -m pip install --upgrade pip
+
 COPY ./requirements.txt /requirements.txt
 RUN apk add --update --no-cache postgresql-client jpeg-dev
 RUN apk add --update --no-cache --virtual .tmp-build-deps \
